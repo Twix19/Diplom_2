@@ -1,8 +1,8 @@
 package org.example.loginUser;
 
-public class LoginUser {
-private String email;
-private String password;
+public class DataOfUser {
+    private String email;
+    private String password;
 
     public String getEmail() {
         return email;
@@ -11,6 +11,7 @@ private String password;
     public void setEmail(String email) {
         this.email = email;
     }
+
     public String getPassword() {
         return password;
     }
@@ -19,9 +20,8 @@ private String password;
         this.password = password;
     }
 
-    public LoginUser(String email, String password ){
-    this.email = email;
-    this.password = password;
+    public DataOfUser(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
-
 }
