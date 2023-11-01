@@ -7,14 +7,22 @@ import io.restassured.response.Response;
 public class DataOfUserAPI {
     private static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
     private static final String LOGIN_PATH = "/api/auth/login";
-    LoginUser loginUser = new LoginUser("koar@yandex.ru", "op90ki");
+    private static final String DATA_PATH = "/api/auth/user";
+    LoginUser loginUser = new LoginUser("ckn@yandex.ru", "v9lvoe8");
     public String accessToken;
-    public Response sendAvtorizationOfUser() {
+    public Response sendAvtorizationDataOfUser() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
                 .baseUri(BASE_URL)
                 .body(loginUser)
                 .when()
                 .post(LOGIN_PATH);
+    }
+    public Response sendDataUpdate() {
+        return RestAssured.given().log().all()
+                .contentType(ContentType.JSON)
+                .baseUri(BASE_URL)
+                .when()
+                .patch(DATA_PATH);
     }
 }
