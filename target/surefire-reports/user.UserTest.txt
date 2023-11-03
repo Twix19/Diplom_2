@@ -1,15 +1,15 @@
 -------------------------------------------------------------------------------
 Test set: user.UserTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.009 s <<< FAILURE! - in user.UserTest
-createExcitingUser(user.UserTest)  Time elapsed: 0.383 s  <<< FAILURE!
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.328 s <<< FAILURE! - in user.UserTest
+createExcitingUser(user.UserTest)  Time elapsed: 0.555 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <403> but was <200>.
 
 	at user.UserTest.createExcitingUser(UserTest.java:33)
 
-createUser(user.UserTest)  Time elapsed: 0.292 s  <<< FAILURE!
+createUser(user.UserTest)  Time elapsed: 0.356 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <200> but was <403>.

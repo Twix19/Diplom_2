@@ -7,8 +7,9 @@ import io.restassured.response.Response;
 public class UserAPI {
     private static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
     private static final String USER_PATH = "/api/auth/register";
-    User user = new User("uyhgtrflx@yandex.ru", " nbgcyt82ubkd90ki", "Loluas");
+    User user = new User("uxmlkbxbulx@yandex.ru", "ecew8tfbbkd90ki", "Loluas");
     User userWithoutPasssword = new User("kosacr@yandex.ru", "", "Lola");
+    User excitingUser = new User("ehdhoeecflx@yandex.ru", "ecew82ubkd90ki", "Loluas");
 
 
     public Response sendCreationDataOfUser() {
@@ -24,7 +25,7 @@ public class UserAPI {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
                 .baseUri(BASE_URL)
-                .body(user)
+                .body(excitingUser)
                 .when()
                 .post(USER_PATH);
     }
