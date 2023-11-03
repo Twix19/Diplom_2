@@ -7,7 +7,7 @@ import io.restassured.response.Response;
 public class UserAPI {
     private static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
     private static final String USER_PATH = "/api/auth/register";
-    User user = new User("koadcscсr@yandex.ru", "opcsd90ki", "Lola");
+    User user = new User("koggffr@yandex.ru", "opbkd90ki", "Lola");
     User userWithoutPasssword = new User("kosacr@yandex.ru", "", "Lola");
 
 

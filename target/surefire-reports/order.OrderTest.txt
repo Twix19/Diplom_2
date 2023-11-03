@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: order.OrderTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.988 s <<< FAILURE! - in order.OrderTest
+createOrderWithoutAvtorization(order.OrderTest)  Time elapsed: 0.942 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <400> but was <200>.
+
+	at order.OrderTest.createOrderWithoutAvtorization(OrderTest.java:34)
+

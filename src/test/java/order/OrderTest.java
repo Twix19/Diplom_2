@@ -14,7 +14,7 @@ public class OrderTest {
   public void createOrderWithAvtorization(){
     orderAPI.sendAvtorizationDataOfUser();
     orderAPI.putDataOfIngredients();
-    orderAPI.sendDataOfIngredients() //проблема в этой строке
+    orderAPI.sendDataOfIngredients()
             .then().log().all()
             .assertThat()
             .statusCode(SC_OK);
@@ -35,23 +35,24 @@ public class OrderTest {
             .extract()
             .path("false");
   }
+
   @Test
   @DisplayName("Создание заказа с ингредиентами") //работает
   @Description("Метод отправляет данные пользователя на сервер для авторизации,получает данные об ингредиентах,создаёт заказ с ингредиентами .В случае успешного выполнения запроса будет получен ответ со статусом 200.")
   public void createOrderWithIngredients(){
     orderAPI.sendAvtorizationDataOfUser();
     orderAPI.putDataOfIngredients();
-    orderAPI.sendDataWithoutIngredients()
+    orderAPI.sendDataOfIngredients()
             .then().log().all()
             .assertThat()
-            .statusCode(SC_BAD_REQUEST)
+            .statusCode(SC_OK)
             .extract()
-            .path("false");
+            .path("true");
   }
 
 
   @Test
-  @DisplayName("Создание заказа без ингредиентов") //работает
+  @DisplayName("Создание заказа без ингредиентов")
   @Description("Метод отправляет данные пользователя на сервер для авторизации,получает данные об ингредиентах,создаёт заказ без ингредиентов .В случае успешного выполнения запроса будет получен ответ со статусом 400.")
   public void createOrderWithoutIngredientHash(){
     orderAPI.sendAvtorizationDataOfUser();
@@ -69,7 +70,7 @@ public class OrderTest {
   public void createOrderWithIncorrectIngredientHash(){
     orderAPI.sendAvtorizationDataOfUser();
     orderAPI.putDataOfIngredients();
-    orderAPI.sendDataOfIngredients()
+    orderAPI.sendWrongDataOfIngredients()
             .then().log().all()
             .assertThat()
             .statusCode(SC_INTERNAL_SERVER_ERROR)

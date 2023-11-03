@@ -13,9 +13,8 @@ public class OrderAPI {
     private static final String DATAOFINGREDIENTS_PATH = "/api/ingredients";
     private static final String LOGIN_PATH = "/api/auth/login";
 
-    // public String idOfIngredients = "61c0c5a71d1f82001bdaaa6f 61c0c5a71d1f82001bdaaa70";
-    String idOfIngredients = "{\"ingredients\": [\"60d3b41abdacab0026a733c6\",\"609646e4dc916e00276b2870\"]}";
-    //String idOfIngredients = "{\"ingredients\":[\"\"60d3b41abdacab0026a733c6\",\"\"609646e4dc916e00276b2870\"]}";
+    String idOfIngredients = "{\"ingredients\": [\"61c0c5a71d1f82001bdaaa6d\",\"609646e4dc916e00276b2870\"]}";
+    String idOfWrongIngredients = "{\"ingredients\": [\"61c0c5a7182001bdaaa6d\",\"609646e4dc9276b2870\"]}";
     String ingredient = "";
     public String accessToken;
     LoginUser loginUser = new LoginUser("ckn@yandex.ru", "v9lvoe8");
@@ -40,8 +39,7 @@ public class OrderAPI {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
                 .baseUri(BASE_URL)
-                .param("60d3b41abdacab0026a733c6","609646e4dc916e00276b2870")
-              //  .body(idOfIngredients)
+                .body(idOfIngredients)
                 .when()
                 .post(ORDER_PATH);
     }
@@ -50,6 +48,14 @@ public class OrderAPI {
                 .contentType(ContentType.JSON)
                 .baseUri(BASE_URL)
                 .body(ingredient)
+                .when()
+                .post(ORDER_PATH);
+    }
+    public Response sendWrongDataOfIngredients() {
+        return RestAssured.given().log().all()
+                .contentType(ContentType.JSON)
+                .baseUri(BASE_URL)
+                .body(idOfWrongIngredients)
                 .when()
                 .post(ORDER_PATH);
     }

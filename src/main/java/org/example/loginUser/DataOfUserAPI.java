@@ -10,6 +10,7 @@ public class DataOfUserAPI {
     private static final String DATA_PATH = "/api/auth/user";
     LoginUser loginUser = new LoginUser("ckn@yandex.ru", "v9lvoe8");
     public String accessToken;
+
     public Response sendAvtorizationDataOfUser() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
@@ -18,7 +19,17 @@ public class DataOfUserAPI {
                 .when()
                 .post(LOGIN_PATH);
     }
-    public Response sendDataUpdate() {
+
+    public Response changeData() {
+        return RestAssured.given().log().all()
+                .contentType(ContentType.JSON)
+                .baseUri(BASE_URL)
+                .header("Authorization", accessToken)
+                .body(loginUser)
+                .when()
+                .patch(DATA_PATH);
+    }
+    public Response sendDataUpdateWithoutAvto() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
                 .baseUri(BASE_URL)

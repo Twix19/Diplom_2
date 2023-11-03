@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: order.ListOdOrdersTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.343 s <<< FAILURE! - in order.ListOdOrdersTest
+listOfOrdersOfAvtorizationUser(order.ListOdOrdersTest)  Time elapsed: 1.06 s  <<< FAILURE!
+java.lang.AssertionError: 
+1 expectation failed.
+Expected status code <200> but was <401>.
+
+	at order.ListOdOrdersTest.listOfOrdersOfAvtorizationUser(ListOdOrdersTest.java:29)
+
