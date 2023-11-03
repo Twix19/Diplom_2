@@ -31,9 +31,9 @@ public class OrderTest {
     orderAPI.sendDataOfIngredients()
             .then().log().all()
             .assertThat()
-            .statusCode(SC_BAD_REQUEST)
+            .statusCode(SC_OK)
             .extract()
-            .path("false");
+            .path("true");
   }
 
   @Test

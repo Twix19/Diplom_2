@@ -12,7 +12,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 public class LoginUserTest {
     LoginUserAPI loginUserAPI = new LoginUserAPI();
     @Test
-    @DisplayName("Авторизация под существующим пользователем") //работает
+    @DisplayName("Авторизация под существующим пользователем")
     @Description("Метод отправляет данные пользователя на сервер.В случае успешного выполнения запроса будет получен ответ со статусом 200.")
     public void avtorizationUser(){
         loginUserAPI.sendAvtorizationDataOfUser()

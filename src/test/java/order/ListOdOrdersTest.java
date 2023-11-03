@@ -23,7 +23,7 @@ public class ListOdOrdersTest {
                 .extract()
                 .path("accessToken");
                 System.out.println("accessToken");
-        listOfOrdersAPI.putListOfOrders()
+        listOfOrdersAPI.putDataWithAvtorization()
                 .then().log().all()
                 .assertThat()
                 .statusCode(SC_OK);

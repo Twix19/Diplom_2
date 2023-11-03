@@ -9,6 +9,15 @@ public class ListOfOrdersAPI {
     private static final String LISTORDERS_PATH = "/api/orders";
     private static final String TOKEN_PATH = "/api/auth/token";
     public String accessToken;
+    public Response putDataWithAvtorization() {
+        return RestAssured.given().log().all()
+                .contentType(ContentType.JSON)
+                .baseUri(BASE_URL)
+                .header("Authorization", accessToken)
+               // .body(loginUser)
+                .when()
+                .get(LISTORDERS_PATH);
+    }
     public Response tokenUpdate() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)

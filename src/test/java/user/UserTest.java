@@ -24,7 +24,7 @@ public class UserTest {
                 .path("true");
     }
     @Test
-    @DisplayName("Создание существующего пользователя") // работает
+    @DisplayName("Создание существующего пользователя")
     @Description("Метод отправляет данные пользователя, который уже зарегестрирован на сайте.В случае успешного выполнения запроса будет получен ответ со статусом 403.")
     public void createExcitingUser(){
         userAPI.sendDataOfExistingUser()
@@ -35,7 +35,7 @@ public class UserTest {
                 .path("false", String.valueOf(equalTo("User already exists")));
     }
     @Test
-    @DisplayName("Создание пользователя с пропущенными данными") //работает
+    @DisplayName("Создание пользователя с пропущенными данными")
     @Description("Метод отправляет недостаточно данных пользователя.В случае успешного выполнения запроса будет получен ответ со статусом 403.")
     public void createUserWithMissingFields(){
         userAPI.sendDataWithMissingFields()
