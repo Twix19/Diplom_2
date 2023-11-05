@@ -9,7 +9,7 @@ public class LoginUserAPI {
     private static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
     private static final String LOGIN_PATH = "/api/auth/login";
     // User user = new User("", "", "");
-    LoginUser loginUser = new LoginUser("ckn@yandex.ru", "v9lvoe8"); // при создании нового курьера нужно вписывать сюда эмаил и пароль пользователя, которого создали
+    LoginUser loginUser = new LoginUser("ckkn@yandex.ru", "v9lvoe8"); // при создании нового курьера нужно вписывать сюда эмаил и пароль пользователя, которого создали
     WrongLogin wrongLogin = new WrongLogin("djgjgsc@yandex.ru", "hcksdck"); //для теста с несуществующим логином и паролем
     public Response sendAvtorizationDataOfUser() {
         return RestAssured.given().log().all()
