@@ -23,8 +23,8 @@ public class LoginUserTest {
                 .path("true");
     }
     @Test
-    @DisplayName("Авторизация с неверным логином и паролем") // работает
-    @Description("Метод отправляет неверные данные пользователя на сервер.В случае успешного выполнения запроса будет получен ответ со статусом 200.")
+    @DisplayName("Авторизация с неверным логином и паролем")
+    @Description("Метод отправляет неверные данные пользователя на сервер.В случае успешного выполнения запроса будет получен ответ со статусом 401.")
     public void avtorizationWrongUser(){
         loginUserAPI.sendWrongAvtorizationDataOfUser()
                 .then().log().all()

@@ -13,7 +13,7 @@ public class UserTest {
     UserAPI userAPI = new UserAPI();
 
     @Test
-    @DisplayName("Создание пользователя") // работает, но нужно обновлять бади юзера иначе не создатся
+    @DisplayName("Создание пользователя")
     @Description("Метод отправляет данные пользователя на сервер.В случае успешного выполнения запроса будет получен ответ со статусом 200.")
     public void createUser(){
         userAPI.sendCreationDataOfUser()
