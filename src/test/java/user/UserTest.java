@@ -45,5 +45,4 @@ public class UserTest {
                 .extract()
                 .path("false", String.valueOf(equalTo("Email, password and name are required fields")));
     }
-
 }
