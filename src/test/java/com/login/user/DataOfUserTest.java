@@ -11,7 +11,7 @@ import static org.apache.http.HttpStatus.SC_UNAUTHORIZED;
 
 public class DataOfUserTest {
     DataOfUserAPI dataOfUserAPI = new DataOfUserAPI();
-    LoginUserAPI loginUserAPI = new LoginUserAPI();
+
     @Test
     @DisplayName("Обновление данных пользователя с автоизацией")
     @Description("Метод отправляет данные пользователя на сервер, происходит авторизация пользователя, метод получает assesToken, по токену получает инормацию о пользователю, после по токену обновляет информацию о нем.В случае успешного выполнения запроса будет получен ответ со статусом 200.")

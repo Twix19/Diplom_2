@@ -9,20 +9,18 @@ public class BaseClient {
     private static final String BASE_URI = "https://stellarburgers.nomoreparties.site";
     private static final String LOGIN_PATH = "/api/auth/login";
     private static final String DATA_PATH = "/api/auth/user";
-    public RequestSpecification spec() {
+    public RequestSpecification RequestSpecificationspec() {
         return given()
                 .filters(new RequestLoggingFilter(), new ResponseLoggingFilter())
                 .contentType(ContentType.JSON)
-                .baseUri(BASE_URI)
-                .basePath(LOGIN_PATH)
-                ;
+                .baseUri(BASE_URI);
+
     }
-    public RequestSpecification specTwo() {
+    public RequestSpecification RequestSpecificationspecTwo() {
         return given()
                 .filters(new RequestLoggingFilter(), new ResponseLoggingFilter())
                 .contentType(ContentType.JSON)
-                .baseUri(BASE_URI)
-                .basePath(DATA_PATH)
-                ;
+                .baseUri(BASE_URI);
+                //  .basePath(DATA_PATH);
     }
 }
