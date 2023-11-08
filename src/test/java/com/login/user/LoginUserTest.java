@@ -1,8 +1,9 @@
-package loginUser;
+package com.login.user;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.example.loginUser.LoginUserAPI;
+import org.junit.After;
 import org.junit.Test;
 
 import static org.apache.http.HttpStatus.SC_OK;

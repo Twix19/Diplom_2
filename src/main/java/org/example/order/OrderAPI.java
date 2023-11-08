@@ -1,5 +1,6 @@
 package org.example.order;
 
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -19,6 +20,8 @@ public class OrderAPI {
     public String accessToken;
     LoginUser loginUser = new LoginUser("ckn@yandex.ru", "v9lvoe8");
 
+    @Step("send POST request to /api/auth/login")
+
     public Response sendAvtorizationDataOfUser() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
@@ -27,6 +30,7 @@ public class OrderAPI {
                 .when()
                 .post(LOGIN_PATH);
     }
+    @Step("send GET request to /api/ingredients")
     public Response putDataOfIngredients() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
@@ -35,6 +39,7 @@ public class OrderAPI {
                 .when()
                 .get(DATAOFINGREDIENTS_PATH);
     }
+    @Step("send POST request to /api/ingredients")
     public Response sendDataOfIngredients() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
@@ -43,6 +48,7 @@ public class OrderAPI {
                 .when()
                 .post(ORDER_PATH);
     }
+    @Step("send POST request to /api/orders")
     public Response sendDataWithoutIngredients() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)
@@ -51,6 +57,7 @@ public class OrderAPI {
                 .when()
                 .post(ORDER_PATH);
     }
+    @Step("send POST request to /api/orders")
     public Response sendWrongDataOfIngredients() {
         return RestAssured.given().log().all()
                 .contentType(ContentType.JSON)

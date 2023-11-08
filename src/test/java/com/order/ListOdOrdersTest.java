@@ -1,4 +1,4 @@
-package order;
+package com.order;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -22,7 +22,7 @@ public class ListOdOrdersTest {
         listOfOrdersAPI.accessToken = loginUserAPI.sendAvtorizationDataOfUser().then()
                 .extract()
                 .path("accessToken");
-                System.out.println("accessToken");
+        System.out.println("accessToken");
         listOfOrdersAPI.putDataWithAvtorization()
                 .then().log().all()
                 .assertThat()

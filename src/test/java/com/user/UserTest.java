@@ -1,4 +1,4 @@
-package user;
+package com.user;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -46,3 +46,4 @@ public class UserTest {
                 .path("false", String.valueOf(equalTo("Email, password and name are required fields")));
     }
 }
+

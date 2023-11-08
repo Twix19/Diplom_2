@@ -1,4 +1,4 @@
-package loginUser;
+package com.login.user;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -17,8 +17,8 @@ public class DataOfUserTest {
     @Description("Метод отправляет данные пользователя на сервер, происходит авторизация пользователя, метод получает assesToken, по токену получает инормацию о пользователю, после по токену обновляет информацию о нем.В случае успешного выполнения запроса будет получен ответ со статусом 200.")
     public void avtorizationUser(){
         dataOfUserAPI.accessToken = dataOfUserAPI.sendAvtorizationDataOfUser().then()
-                        .extract()
-                        .path("accessToken");
+                .extract()
+                .path("accessToken");
         dataOfUserAPI.changeData()
                 .then().log().all()
                 .assertThat()
