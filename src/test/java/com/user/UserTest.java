@@ -3,6 +3,7 @@ package com.user;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.example.user.UserAPI;
+import org.junit.After;
 import org.junit.Test;
 
 import static org.apache.http.HttpStatus.SC_FORBIDDEN;
@@ -45,5 +46,6 @@ public class UserTest {
                 .extract()
                 .path("false", String.valueOf(equalTo("Email, password and name are required fields")));
     }
+
 }
 

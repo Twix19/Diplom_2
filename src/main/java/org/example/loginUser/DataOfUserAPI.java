@@ -1,8 +1,6 @@
 package org.example.loginUser;
 
 import io.qameta.allure.Step;
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
 public class DataOfUserAPI {
@@ -31,7 +29,7 @@ public class DataOfUserAPI {
     @Step("send PATCH request to /api/auth/user")
 
     public Response sendDataUpdateWithoutAvto() {
-        return baseClient.RequestSpecificationspecTwo()
+        return baseClient.RequestSpecificationspec()
                 .when()
                 .patch(DATA_PATH);
     }

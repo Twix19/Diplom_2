@@ -4,6 +4,7 @@ import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.example.loginUser.BaseClient;
 import org.example.loginUser.LoginUser;
 import org.example.user.User;
 import org.example.loginUser.DataOfUserAPI;
@@ -19,49 +20,40 @@ public class OrderAPI {
     String ingredient = "";
     public String accessToken;
     LoginUser loginUser = new LoginUser("ckn@yandex.ru", "v9lvoe8");
+    BaseClient baseClient = new BaseClient();
 
     @Step("send POST request to /api/auth/login")
 
     public Response sendAvtorizationDataOfUser() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 .body(loginUser)
                 .when()
                 .post(LOGIN_PATH);
     }
     @Step("send GET request to /api/ingredients")
     public Response putDataOfIngredients() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 //.body()
                 .when()
                 .get(DATAOFINGREDIENTS_PATH);
     }
     @Step("send POST request to /api/ingredients")
     public Response sendDataOfIngredients() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 .body(idOfIngredients)
                 .when()
                 .post(ORDER_PATH);
     }
     @Step("send POST request to /api/orders")
     public Response sendDataWithoutIngredients() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 .body(ingredient)
                 .when()
                 .post(ORDER_PATH);
     }
     @Step("send POST request to /api/orders")
     public Response sendWrongDataOfIngredients() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 .body(idOfWrongIngredients)
                 .when()
                 .post(ORDER_PATH);

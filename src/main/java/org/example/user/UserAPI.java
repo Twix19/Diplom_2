@@ -4,20 +4,20 @@ import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.example.loginUser.BaseClient;
 
 public class UserAPI {
-    private static final String BASE_URL = "https://stellarburgers.nomoreparties.site";
+
     private static final String USER_PATH = "/api/auth/register";
     User user = new User("kjkgkgkgk@yandex.ru", "ecew8tfbbkd90ki", "Loluas");
     User userWithoutPasssword = new User("kosacr@yandex.ru", "", "Lola");
     User excitingUser = new User("ehdhoeecflx@yandex.ru", "ecew82ubkd90ki", "Loluas");
+    BaseClient baseClient = new BaseClient();
 
 
     @Step("send POST request to /api/auth/register")
     public Response sendCreationDataOfUser() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 .body(user)
                 .when()
                 .post(USER_PATH);
@@ -25,9 +25,7 @@ public class UserAPI {
     @Step("send POST request to /api/auth/register")
 
     public Response sendDataOfExistingUser() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 .body(excitingUser)
                 .when()
                 .post(USER_PATH);
@@ -35,12 +33,11 @@ public class UserAPI {
     @Step("send POST request to /api/auth/register")
 
     public Response sendDataWithMissingFields() {
-        return RestAssured.given().log().all()
-                .contentType(ContentType.JSON)
-                .baseUri(BASE_URL)
+        return baseClient.RequestSpecificationspec()
                 .body(userWithoutPasssword)
                 .when()
                 .post(USER_PATH);
 
     }
+
 }
