@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: order.ListOdOrdersTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.971 s <<< FAILURE! - in order.ListOdOrdersTest
-listOfOrdersOfAvtorizationUser(order.ListOdOrdersTest)  Time elapsed: 2.585 s  <<< ERROR!
-java.lang.IllegalArgumentException: Header value cannot be null
-	at order.ListOdOrdersTest.listOfOrdersOfAvtorizationUser(ListOdOrdersTest.java:26)
-
