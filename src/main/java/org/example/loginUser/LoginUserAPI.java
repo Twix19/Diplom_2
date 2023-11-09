@@ -9,7 +9,7 @@ public class LoginUserAPI {
     private static final String LOGIN_PATH = "/api/auth/login";
     private static final String DELETE_PATH = "/api/auth/user";
     BaseClient baseClient = new BaseClient();
-    LoginUser loginUser = new LoginUser("esesyuiiut@yandex.ru", "ecew8tfbbkd90ki"); // при создании нового курьера нужно вписывать сюда эмаил и пароль пользователя, которого создали
+    LoginUser loginUser = new LoginUser("klkahxo@mail.ru", "vhou346723ghjb"); // при создании нового курьера нужно вписывать сюда эмаил и пароль пользователя, которого создали
     WrongLogin wrongLogin = new WrongLogin("djgjgsc@yandex.ru", "hcksdck"); //для теста с несуществующим логином и паролем
 
     public String accessToken;
@@ -41,7 +41,6 @@ public class LoginUserAPI {
 
     public Response sendAvtorizationData() {
         return baseClient.RequestSpecificationspec()
-                .header("Authorization", accessToken)
                 .body(loginUser)
                 .when()
                 .post(LOGIN_PATH);

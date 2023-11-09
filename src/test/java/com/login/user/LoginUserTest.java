@@ -12,7 +12,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class LoginUserTest {
     LoginUserAPI loginUserAPI = new LoginUserAPI();
-    DataOfUserAPI dataOfUserAPI = new DataOfUserAPI();
     @Test
     @DisplayName("Авторизация под существующим пользователем")
     @Description("Метод отправляет данные пользователя на сервер.В случае успешного выполнения запроса будет получен ответ со статусом 200.")
@@ -35,7 +34,7 @@ public class LoginUserTest {
                 .extract()
                 .path("false", String.valueOf(equalTo("email or password are incorrect")));
     }
-    @Test
+    @After
     @DisplayName("Удаление пользователя")
    public void deleteUser(){
       loginUserAPI.accessToken = loginUserAPI.sendAvtorizationData().then()
